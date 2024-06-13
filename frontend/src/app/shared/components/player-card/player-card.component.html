@@ -1,0 +1,41 @@
+<div *ngIf="player" class="player-card">
+  <div class="title">
+    <div class="playe-details">
+      <h3>{{ player.name }}</h3>
+      <p>Age: {{ player.age }}</p>
+      <p>Position: {{ player.position }}</p>
+      <p>Overall Rating: {{ player.overallRating }}</p>
+    </div>
+    <div class="player-image">
+      <img src="{{player.img}}" alt="messi">
+    </div>
+  </div>
+  <div class="skills">
+    <div class="physical">
+      <app-skill-bar skillName="Pace" [skillLevel]="player.skills.pace"></app-skill-bar>
+      <app-skill-bar skillName="Stamina" [skillLevel]="player.skills.stamina"></app-skill-bar>
+      <app-skill-bar skillName="Strength" [skillLevel]="player.skills.strength"></app-skill-bar>
+      <app-skill-bar skillName="Agility" [skillLevel]="player.skills.agility"></app-skill-bar>
+      <app-skill-bar skillName="Balance" [skillLevel]="player.skills.balance"></app-skill-bar>
+      <app-skill-bar skillName="Tackling" [skillLevel]="player.skills.tackling"></app-skill-bar>
+      <app-skill-bar skillName="Marking" [skillLevel]="player.skills.marking"></app-skill-bar>
+      <app-skill-bar skillName="Interception" [skillLevel]="player.skills.interception"></app-skill-bar>
+    </div>
+    <div class="technical">
+      <app-skill-bar skillName="Shooting" [skillLevel]="player.skills.shooting"></app-skill-bar>
+      <app-skill-bar skillName="Passing" [skillLevel]="player.skills.passing"></app-skill-bar>
+      <app-skill-bar skillName="Dribbling" [skillLevel]="player.skills.dribbling"></app-skill-bar>
+      <app-skill-bar skillName="Ball Control" [skillLevel]="player.skills.ballControl"></app-skill-bar>
+      <app-skill-bar skillName="Crossing" [skillLevel]="player.skills.crossing"></app-skill-bar>
+      <app-skill-bar skillName="Heading" [skillLevel]="player.skills.heading"></app-skill-bar>
+    </div>
+    <div class="Mental">
+      <app-skill-bar skillName="Vision" [skillLevel]="player.skills.vision"></app-skill-bar>
+      <app-skill-bar skillName="Composure" [skillLevel]="player.skills.composure"></app-skill-bar>
+      <app-skill-bar skillName="Leadership" [skillLevel]="player.skills.leadership"></app-skill-bar>
+      <app-skill-bar skillName="Teamwork" [skillLevel]="player.skills.teamwork"></app-skill-bar>
+      <app-skill-bar skillName="Attack Work Rate" [skillLevel]="player.skills.workRate.attack"></app-skill-bar>
+      <app-skill-bar skillName="Defense Work Rate" [skillLevel]="player.skills.workRate.defense"></app-skill-bar>
+    </div>
+    </div>
+</div>

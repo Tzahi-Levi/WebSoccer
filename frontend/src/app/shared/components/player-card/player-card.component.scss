@@ -1,0 +1,47 @@
+.player-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.playe-details{
+  width: 66%;
+}
+
+.player-image{
+  width: 33%;
+  border-radius: 10%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  img{
+    width: 100%;
+    border-radius: 10%;
+  }
+}
+
+.player-card h3 {
+  margin-top: 0;
+}
+
+.physical,
+.technical,
+.defensive,
+.Mental {
+  width: 33%;
+}
+
+.skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+}
