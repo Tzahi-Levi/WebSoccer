@@ -1,0 +1,69 @@
+.formation-card {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  margin: 10px;
+  width: 150px;
+  height: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgb(103, 122, 172);
+}
+
+.title{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  border-radius: 15px;
+  background-size: cover; /* Scales the image to cover the container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; 
+  position: relative;
+}
+
+.playe-details{
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  font-weight: bold;
+  justify-content: center;
+  position: relative;
+  margin: 3px;
+  border-radius: 15px;
+}
+
+.details{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5px;  
+}
+
+.detail-background{
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.position,
+.rating {
+  color: black;
+  font-size: 18px;
+  font-weight:bolder;
+}
+
+.name {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 2px 5px;
+}
+

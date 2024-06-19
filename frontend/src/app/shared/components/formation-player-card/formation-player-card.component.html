@@ -1,0 +1,15 @@
+<div *ngIf="player" class="formation-card">
+  <div class="title" style="background-image: url({{avatarUrl}});">
+      <div class="details">
+        <div class="detail-background">
+          <p class="position">{{ player.position }}</p>
+        </div>
+        <div class="detail-background">
+          <p class="rating">{{ player.overallRating }}</p>
+        </div>
+      </div>
+    <div class="playe-details">
+      <div class="name">{{ player.name }}</div>
+    </div>
+  </div>
+</div>
