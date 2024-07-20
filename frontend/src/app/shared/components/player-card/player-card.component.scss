@@ -1,10 +1,10 @@
 .player-card {
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 10px;
   margin: 10px;
-  max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .title{
@@ -12,16 +12,14 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-
-.playe-details{
-  width: 66%;
+  width: 100%;
+  padding: 13px;
 }
 
 .player-image{
-  width: 33%;
   border-radius: 10%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%;
   img{
     width: 100%;
     border-radius: 10%;
@@ -30,18 +28,50 @@
 
 .player-card h3 {
   margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+.detail{
+  padding-bottom: 5px;
+  color: #6A6A6A;
 }
 
-.physical,
-.technical,
-.defensive,
-.Mental {
-  width: 33%;
+.col-one{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.col-two{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .skills {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-top: 10px;
+}
+
+.icon{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 100%;
+  padding: 0 13px;
+}
+.icon:hover{
+  cursor: pointer;
+}
+
+.divider{
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 0; /* Adjust margin as needed */
+  width: 100%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
 }
