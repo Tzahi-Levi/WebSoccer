@@ -1,41 +1,31 @@
 <div *ngIf="player" class="player-card">
-  <div class="title">
-    <div class="playe-details">
-      <h3>{{ player.name }}</h3>
-      <p>Age: {{ player.age }}</p>
-      <p>Position: {{ player.position }}</p>
-      <p>Overall Rating: {{ player.overallRating }}</p>
+  <div class="general">
+    <div class="title">
+      <div class="player-image">
+        <img src="{{avatarUrl}}" alt="messi">
+      </div>
+      <div class="playe-details">
+        <h3>{{ player.name }}</h3>
+        <div class="detail">Age: {{ player.age }}</div>
+        <div class="detail">Position: {{ player.position }}</div>
+        <div class="detail">Overall Rating: {{ player.overallRating }}</div>
+      </div>
+      <app-skills-view [skills]="generalSkills"></app-skills-view>
     </div>
-    <div class="player-image">
-      <img src="{{avatarUrl}}" alt="messi">
+    <div class="icon">
+      <i class="fas fa-chevron-down" (click)="onChangeView()" [@expandCollapse]="isExpended ? 'collapsed' : 'expanded'"></i>
+      <i class="fas fa-chevron-up" (click)="onChangeView()" [@expandCollapse]="isExpended ? 'expanded' : 'collapsed'"></i>
     </div>
   </div>
-  <div class="skills">
-    <div class="physical">
-      <app-skill-bar skillName="Pace" [skillLevel]="player.skills.pace"></app-skill-bar>
-      <app-skill-bar skillName="Stamina" [skillLevel]="player.skills.stamina"></app-skill-bar>
-      <app-skill-bar skillName="Strength" [skillLevel]="player.skills.strength"></app-skill-bar>
-      <app-skill-bar skillName="Agility" [skillLevel]="player.skills.agility"></app-skill-bar>
-      <app-skill-bar skillName="Balance" [skillLevel]="player.skills.balance"></app-skill-bar>
-      <app-skill-bar skillName="Tackling" [skillLevel]="player.skills.tackling"></app-skill-bar>
-      <app-skill-bar skillName="Marking" [skillLevel]="player.skills.marking"></app-skill-bar>
-      <app-skill-bar skillName="Interception" [skillLevel]="player.skills.interception"></app-skill-bar>
+  <div class="divider" [@expandCollapse]="isExpended ? 'expanded' : 'collapsed'" [ngStyle]="{'margin': isExpended ? '10px 0' : '0'}"></div>
+  <div class="skills" [@expandCollapse]="isExpended ? 'expanded' : 'collapsed'">
+    <div class="col-one">
+      <app-skills-view [title]="'Physical Attributes'" [skills]="physical"></app-skills-view>
+      <app-skills-view [title]="'Mental Attributes'" [skills]="mental"></app-skills-view>
     </div>
-    <div class="technical">
-      <app-skill-bar skillName="Shooting" [skillLevel]="player.skills.shooting"></app-skill-bar>
-      <app-skill-bar skillName="Passing" [skillLevel]="player.skills.passing"></app-skill-bar>
-      <app-skill-bar skillName="Dribbling" [skillLevel]="player.skills.dribbling"></app-skill-bar>
-      <app-skill-bar skillName="Ball Control" [skillLevel]="player.skills.ballControl"></app-skill-bar>
-      <app-skill-bar skillName="Crossing" [skillLevel]="player.skills.crossing"></app-skill-bar>
-      <app-skill-bar skillName="Heading" [skillLevel]="player.skills.heading"></app-skill-bar>
+    <div class="col-two">
+      <app-skills-view [title]="'Technical Skills'" [skills]="technical"></app-skills-view>
+      <app-skills-view [title]="'Defensive Attributes'" [skills]="defensive"></app-skills-view>
     </div>
-    <div class="Mental">
-      <app-skill-bar skillName="Vision" [skillLevel]="player.skills.vision"></app-skill-bar>
-      <app-skill-bar skillName="Composure" [skillLevel]="player.skills.composure"></app-skill-bar>
-      <app-skill-bar skillName="Leadership" [skillLevel]="player.skills.leadership"></app-skill-bar>
-      <app-skill-bar skillName="Teamwork" [skillLevel]="player.skills.teamwork"></app-skill-bar>
-      <app-skill-bar skillName="Attack Work Rate" [skillLevel]="player.skills.workRate.attack"></app-skill-bar>
-      <app-skill-bar skillName="Defense Work Rate" [skillLevel]="player.skills.workRate.defense"></app-skill-bar>
-    </div>
-    </div>
+  </div>
 </div>

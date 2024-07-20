@@ -1,0 +1,16 @@
+<div class="view">
+  <div class="title" *ngIf="title !== ''"> {{title}}</div>
+  <div class="container">
+    <div class="skills">
+      <div class="skill" *ngFor="let skill of skills">{{skill.name}}</div>
+    </div>
+    <div class="bars">
+      <div class="bar" *ngFor="let skill of skills">
+        <div class="level" [style.width.%]="skill.level"></div>
+      </div>
+    </div>
+    <div class="scoring">
+      <div class="score" *ngFor="let skill of skills">{{ skill.level }}</div>
+    </div>
+  </div>
+</div>
