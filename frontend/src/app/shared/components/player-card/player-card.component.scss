@@ -1,5 +1,7 @@
+@import '../../../../styles/variables';
+
 .player-card {
-  border: 1px solid #ccc;
+  border: 1px solid $light_gray;
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
@@ -33,7 +35,7 @@
 }
 .detail{
   padding-bottom: 5px;
-  color: #6A6A6A;
+  color: $dark_gray;
 }
 
 .col-one{
@@ -70,7 +72,7 @@
 
 .divider{
   height: 1px;
-  background-color: #ccc;
+  background-color: $light_gray;
   margin: 10px 0; /* Adjust margin as needed */
   width: 100%;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
