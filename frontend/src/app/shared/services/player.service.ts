@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Player } from '../models/player.model';
-import { sample_players } from '../../../data';
+import { SQUAD_PLAYER_BY_ID_URL, SQUAD_URL } from '../constants/urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerService {
-  private players: Player[] = sample_players;
+  constructor(private http: HttpClient){}
 
-  getPlayers(): Player[] {
-    return this.players;
+  getPlayers(): Observable<Player[]> {
+    return this.http.get<Player[]>(SQUAD_URL);
   }
 
-  getPlayerById(id: number): Player | undefined {
-    return this.players.find(player => player.id === id);
+  getPlayerById(id: number): Observable<Player> {
+    return this.http.get<Player>(SQUAD_PLAYER_BY_ID_URL + id);
   }
 }
