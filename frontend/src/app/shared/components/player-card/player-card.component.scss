@@ -1,10 +1,12 @@
+@import '../../../../styles/variables';
+
 .player-card {
-  border: 1px solid #ccc;
+  border: 1px solid $light_gray;
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
   max-width: 500px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px$transparent_black;
 }
 
 .title{
@@ -13,12 +15,11 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 13px;
 }
 
 .player-image{
   border-radius: 10%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px $transparent_black;
   width: 30%;
   img{
     width: 100%;
@@ -33,7 +34,7 @@
 }
 .detail{
   padding-bottom: 5px;
-  color: #6A6A6A;
+  color: $dark_gray;
 }
 
 .col-one{
@@ -70,8 +71,7 @@
 
 .divider{
   height: 1px;
-  background-color: #ccc;
-  margin: 10px 0; /* Adjust margin as needed */
+  background-color: $light_gray;
   width: 100%;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+  box-shadow: 2px 2px 4px $transparent_black;; /* Adjust shadow as needed */
 }

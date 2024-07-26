@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Player } from '../../models/player.model';
 import { PlayerService } from '../../services/player.service';
 
@@ -11,7 +12,12 @@ export class SquadListComponent {
   players: Player[] = [];
 
   constructor(private playerService: PlayerService){
-    this.players = this.playerService.getPlayers();
+    let playersObservable: Observable<Player[]>;
+    playersObservable = this.playerService.getPlayers();
+
+    playersObservable.subscribe((serverPlayers) => {
+      this.players = serverPlayers
+    })
   }
 
 }

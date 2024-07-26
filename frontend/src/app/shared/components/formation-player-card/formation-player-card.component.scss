@@ -1,11 +1,13 @@
+@import '../../../../styles/variables';
+
 .formation-card {
-  border: 1px solid #ccc;
+  border: 1px solid $light_gray;
   border-radius: 15px;
   margin: 10px;
   width: 150px;
   height: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: rgb(103, 122, 172);
+  box-shadow: 0 4px 8px $transparent_black;
+  background-color: $gray-blue;
 }
 
 .title{
@@ -23,7 +25,7 @@
 
 .playe-details{
   display: flex;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: $transparent_white;
   font-size: 18px;
   font-weight: bold;
   justify-content: center;
@@ -44,7 +46,7 @@
 .detail-background{
   width: 35px;
   height: 35px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: $transparent_white;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -52,13 +54,13 @@
 }
 .position,
 .rating {
-  color: black;
+  color: $black;
   font-size: 18px;
   font-weight:bolder;
 }
 
 .name {
-  color: black;
+  color: $black;
   font-size: 20px;
   font-weight: bold;
   white-space: nowrap;

@@ -6,6 +6,9 @@ import { isAccessor } from "typescript";
 
 const app = express();
 app.use(express.json());
+import { sample_players } from "./data";
+
+const app = express();
 app.use(cors({
   credentials: true,
   origin: ["http://localhost:4200"]
