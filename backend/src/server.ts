@@ -2,13 +2,9 @@ import express from "express";
 import cors from "cors"; // TODO: Onlt for develpoment
 import { sample_players, sample_users } from "./data";
 import jwt from 'jsonwebtoken';
-import { isAccessor } from "typescript";
 
 const app = express();
 app.use(express.json());
-import { sample_players } from "./data";
-
-const app = express();
 app.use(cors({
   credentials: true,
   origin: ["http://localhost:4200"]
