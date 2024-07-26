@@ -1,0 +1,14 @@
+<div class="container">
+  <button [ngClass]="{'difaultColor': color === '$white', 'difaultBackground': bgColor === '$cyan'}"
+    [ngStyle]="{
+      color: color,
+      'background-color': bgColor,
+      'font-size.rem':fontSizeRem,
+      'width.rem':widthRem
+      }"
+      [type]="type"
+      (click)="onClick.emit()"
+      >
+      {{text}}
+  </button> 
+</div>
