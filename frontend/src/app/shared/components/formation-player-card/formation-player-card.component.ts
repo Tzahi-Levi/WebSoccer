@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Player } from '../../models/player.model';
 import { PlayerService } from '../../services/player.service';
 import { AvatarService } from '../../services/avatar.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-formation-player-card',
@@ -14,10 +15,16 @@ export class FormationPlayerCardComponent {
   player: Player | undefined;
   avatarUrl: string = '';
 
-  constructor(private playerService: PlayerService, private avatarService: AvatarService) {}
+  constructor(private playerService: PlayerService, private avatarService: AvatarService) {
+    let playerObservable: Observable<Player>;
+    playerObservable = this.playerService.getPlayerById(this.playerId);
+
+    playerObservable.subscribe((serverPlayer) => {
+      this.player = serverPlayer
+    })
+  }
 
   ngOnInit(): void {
-    this.player = this.playerService.getPlayerById(this.playerId); //TODO - get the player from the server and not hard coded like now
     this.avatarUrl = this.avatarService.generateAvatar(this.player);
   }
 }

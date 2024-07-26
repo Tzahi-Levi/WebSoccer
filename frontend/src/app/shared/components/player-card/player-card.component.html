@@ -17,8 +17,8 @@
       <i class="fas fa-chevron-up" (click)="onChangeView()" [@expandCollapse]="isExpended ? 'expanded' : 'collapsed'"></i>
     </div>
   </div>
-  <div class="divider" [@expandCollapse]="isExpended ? 'expanded' : 'collapsed'" [ngStyle]="{'margin': isExpended ? '10px 0' : '0'}"></div>
-  <div class="skills" [@expandCollapse]="isExpended ? 'expanded' : 'collapsed'">
+  <div class="divider" [@expandCollapse]="isExpended ? 'expanded' : 'collapsed'" [ngStyle]="{'margin': isExpended ? '5px 0 10px 0' : '0'}"></div>
+  <div class="skills" [@expandCollapse]="isExpended ? 'expanded' : 'collapsed'" [ngStyle]="{'margin': isExpended ? '10px 0 0 0' : '0'}">
     <div class="col-one">
       <app-skills-view [title]="'Physical Attributes'" [skills]="physical"></app-skills-view>
       <app-skills-view [title]="'Mental Attributes'" [skills]="mental"></app-skills-view>
