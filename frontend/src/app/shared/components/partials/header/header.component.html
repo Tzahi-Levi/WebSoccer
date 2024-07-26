@@ -1,0 +1,19 @@
+<header>
+  <div class="container">
+    <a href="/" class="logo"> WebSoccer</a>
+    <nav>
+      <ul>
+        <li *ngIf="!isAuth">
+          <a href="/login">Login</a>
+        </li>
+        <li class="menu-container" *ngIf="isAuth">
+          <a href="/dashboard">{{user.name}}</a>
+          <div class="menu">
+            <a href="/profile">Profile</a>
+            <a (click)="logout()">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

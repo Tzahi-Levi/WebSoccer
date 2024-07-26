@@ -1,5 +1,6 @@
+import { Player } from './app/shared/models/player.model';
 
-export const sample_players: any[] = [
+export const sample_players: Player[] = [
   {
     id: 1,
     name: 'Lionel Messi',
