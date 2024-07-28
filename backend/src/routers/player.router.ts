@@ -25,7 +25,6 @@ router.get("/",  expressAsyncHandler(
 ))
 router.get("/:playerId", expressAsyncHandler(
   async (req, res) => {
-    //const playerRegex = new RegExp(req.params.playerId, 'i');
     const squad = await PlayerModel.findById(req.params.playerId);
     res.send(squad);
   }
