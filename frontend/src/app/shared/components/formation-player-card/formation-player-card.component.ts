@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrl: './formation-player-card.component.scss'
 })
 export class FormationPlayerCardComponent {
-  @Input() playerId : number = 0;
+  @Input() playerId : string = '';
 
   player: Player | undefined;
   avatarUrl: string = '';
