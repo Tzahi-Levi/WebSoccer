@@ -14,7 +14,7 @@ export class PlayerService {
     return this.http.get<Player[]>(SQUAD_URL);
   }
 
-  getPlayerById(id: number): Observable<Player> {
+  getPlayerById(id: string): Observable<Player> {
     return this.http.get<Player>(SQUAD_PLAYER_BY_ID_URL + id);
   }
 }

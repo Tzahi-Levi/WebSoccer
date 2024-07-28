@@ -29,12 +29,12 @@ import { Observable } from 'rxjs';
 })
 export class PlayerCardComponent {
 
-  @Input() playerId : number = 0;
+  @Input() playerId : string = '';
 
   isExpended = false;
 
   player: Player = {
-    id: 0,
+    id: '',
     name: '',
     age: 0,
     img: '',
