@@ -13,6 +13,15 @@
             <a (click)="logout()">Logout</a>
           </div>
         </li>
+        <li class="menu-container team" *ngIf="isAuth">
+          <a href="/squad">Team</a>
+          <div class="menu">
+            <a href="/squad">Squad</a>
+            <a>Formation</a>
+            <a>Training</a>
+            <a>Scouting</a>
+          </div>
+        </li>
       </ul>
     </nav>
   </div>

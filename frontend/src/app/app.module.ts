@@ -20,6 +20,7 @@ import { InputValidationComponent } from './shared/components/partials/input-val
 import { TextInputComponent } from './shared/components/partials/text-input/text-input.component';
 import { DefaultButtonComponent } from './shared/components/partials/default-button/default-button.component';
 import { RegisterPageComponent } from './shared/components/pages/register-page/register-page.component';
+import { SquadPageComponent } from './shared/components/pages/squad-page/squad-page.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { RegisterPageComponent } from './shared/components/pages/register-page/r
     TextInputComponent,
     DefaultButtonComponent,
     RegisterPageComponent,
+    SquadPageComponent,
   ],
   imports: [
     BrowserModule,
