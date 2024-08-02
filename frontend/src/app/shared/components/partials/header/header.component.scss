@@ -4,14 +4,14 @@ header{
   position: relative;
   background: white;
   padding: 0;
-  border-bottom: 1px solid $cyan;
+  border-bottom: 1px solid $primary_color;
 }
 a{
-  color: $cyan;
+  color: $primary_color;
   cursor: pointer;
 }
 a:hover{
-  background: $cyan;
+  background: $primary_color;
   color: white;
 }
 .container{
@@ -38,7 +38,7 @@ ul a{
 }
 
 a span{
-  background: $cyan;
+  background: $primary_color;
   color: white;
   padding: 0.1rem 0.45rem;
   border-radius: 100rem;

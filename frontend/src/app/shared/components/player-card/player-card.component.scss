@@ -21,9 +21,27 @@
   border-radius: 10%;
   box-shadow: 0 4px 8px $transparent_black;
   width: 30%;
-  img{
+  position: relative;
+  &.injured{
+    border: 2px solid $red;
+  }
+  .avatar{
     width: 100%;
     border-radius: 10%;
+  }
+
+  .injury-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 30%;
+    box-shadow: 0 0 4px $black
+  }
+  .injury{
+    fill: $red;
   }
 }
 
@@ -73,5 +91,5 @@
   height: 1px;
   background-color: $light_gray;
   width: 100%;
-  box-shadow: 2px 2px 4px $transparent_black;; /* Adjust shadow as needed */
+  box-shadow: 2px 2px 4px $transparent_black;
 }
