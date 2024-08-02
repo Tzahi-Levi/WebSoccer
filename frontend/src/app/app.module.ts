@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SkillBarComponent } from './shared/components/skill-bar/skill-bar.component';
@@ -21,6 +21,8 @@ import { TextInputComponent } from './shared/components/partials/text-input/text
 import { DefaultButtonComponent } from './shared/components/partials/default-button/default-button.component';
 import { RegisterPageComponent } from './shared/components/pages/register-page/register-page.component';
 import { SquadPageComponent } from './shared/components/pages/squad-page/squad-page.component';
+import { LoadingComponent } from './shared/components/partials/loading/loading.component';
+import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { SquadPageComponent } from './shared/components/pages/squad-page/squad-p
     DefaultButtonComponent,
     RegisterPageComponent,
     SquadPageComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,9 @@ import { SquadPageComponent } from './shared/components/pages/squad-page/squad-p
     ReactiveFormsModule,
     NgToastModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
