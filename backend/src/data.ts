@@ -4,7 +4,9 @@ export const sample_players: any[] = [
     id: 1,
     name: 'Lionel Messi',
     age: 36,
-    img: './assets/messi.jpg',
+    img: '',
+    salary: 100000,
+    contractExp: '1/1/1988',
     position: 'CF',
     overallRating: 93,
     skills: {
@@ -44,7 +46,9 @@ export const sample_players: any[] = [
     id: 2,
     name: 'Cristiano Ronaldo',
     age: 39,
-    img: './assets/messi.jpg',
+    img: '',
+    salary: 100000,
+    contractExp: '1/1/1988',
     position: 'CF',
     overallRating: 91,
     skills: {
@@ -85,6 +89,8 @@ export const sample_players: any[] = [
     name: 'Neymar Jr.',
     age: 32,
     img: '',
+    salary: 100000,
+    contractExp: '1/1/1988',
     position: 'RW',
     overallRating: 89,
     skills: {
@@ -125,6 +131,8 @@ export const sample_players: any[] = [
     name: 'Kevin De Bruyne',
     age: 32,
     img: '',
+    salary: 100000,
+    contractExp: '1/1/1988',
     position: 'AM',
     overallRating: 91,
     skills: {
@@ -165,6 +173,8 @@ export const sample_players: any[] = [
     name: 'Virgil van Dijk',
     age: 32,
     img: '',
+    salary: 100000,
+    contractExp: '1/1/1988',
     position: 'CB',
     overallRating: 89,
     skills: {

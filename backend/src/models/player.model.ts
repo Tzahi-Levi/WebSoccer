@@ -72,6 +72,8 @@ export interface Player {
   name: string;
   age: number;
   img: string;
+  salary: number;
+  contractExp: string;
   position: 'GK' | 'CB' | 'SW' | 'FB' | 'LB' | 'RB' | 'WB' | 'LWB' | 'RWB' | 'DM' | 'CDM' | 'CM' | 'AM' | 'CAM' | 'LAM' | 'RAM' | 'WM' | 'LM' | 'RM' | 'ST' | 'CF' | 'SS' | 'LW' | 'RW' ;
   overallRating: number;
   skills: Skills;
@@ -85,6 +87,8 @@ export const PlayerSchema = new Schema<Player>(
     name: {type: String, required: true},
     age: {type: Number, required: true},
     img: {type: String},
+    salary: {type: Number, required: true},
+    contractExp: {type: String, required: true},
     position: {
       type: String, 
       enum:['GK' , 'CB' , 'SW' , 'FB' , 'LB' , 'RB' , 'WB' , 'LWB' , 'RWB' , 'DM' , 'CDM' , 'CM' , 'AM' , 'CAM' , 'LAM' , 'RAM' , 'WM' , 'LM' , 'RM' , 'ST' , 'CF' , 'SS' , 'LW' , 'RW'], 
@@ -105,5 +109,18 @@ export const PlayerSchema = new Schema<Player>(
   }
 )
 
-export const PlayerModel = model<Player>('player', PlayerSchema);
+export interface Squad {
+  userId: string;
+  squad: Player[];
+}
+
+export const SquadSchema = new Schema<Squad>(
+  {
+    userId: {type: String, required: true},
+    squad: {type: [PlayerSchema]},
+  }
+)
+    
+
+export const SquadModel = model<Squad>('squad', SquadSchema);
 

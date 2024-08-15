@@ -5,6 +5,9 @@ import { AvatarService } from '../../services/avatar.service';
 import { Skill } from '../../models/skill.model';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Observable } from 'rxjs';
+import { PlayerSelectionService } from '../../services/player-selection.service';
+import { User } from '../../models/user.model';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-player-card',
@@ -32,12 +35,14 @@ export class PlayerCardComponent {
   @Input() playerId : string = '';
 
   isExpended = false;
-
+  user!:User;
   player: Player = {
     id: '',
     name: '',
     age: 0,
     img: '',
+    salary: 0,
+    contractExp: '1/1/1990',
     position: 'GK',
     overallRating: 0,
     skills: {
@@ -81,8 +86,10 @@ export class PlayerCardComponent {
   defensive: Skill[] = [];
 
 
-  constructor(private playerService: PlayerService, private avatarService: AvatarService) {
-    
+  constructor(private playerService: PlayerService, private avatarService: AvatarService, private playerSelectionService: PlayerSelectionService, private userService:UserService){
+    userService.userObservable.subscribe((newUser) => {
+      this.user = newUser;
+    })
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -91,9 +98,13 @@ export class PlayerCardComponent {
     }
   }
 
+  selectPlayer() {
+    this.playerSelectionService.changeSelected(this.player);
+  }
+
   fetchPlayerData(): void {
-    this.playerService.getPlayerById(this.playerId).subscribe((serverPlayer) => {
-      this.player = serverPlayer;
+    this.playerService.getPlayerById(this.user.id, this.playerId).subscribe((serverPlayer) => {
+      this.player = serverPlayer[0];
       this.avatarUrl = this.avatarService.generateAvatar(this.player);
       this.setSkills();
     });

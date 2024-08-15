@@ -1,0 +1,24 @@
+<div class="container" *ngIf="selectedPlayer.id != ''">
+  <app-title [title]="selectedPlayer.name" margin="1.1rem" color="black"></app-title>
+  <div class="contract">
+    <app-title title="Contract" margin="1.1rem"></app-title>
+    <div class="details">
+      <div class="salary">
+        <app-title title="Salary:" margin="0.5rem 1.1rem" fontSize="1.3rem"></app-title>
+        {{selectedPlayer.salary | currency:'USD':'symbol':'1.2-2'}}
+      </div>
+      <div class="contract-details">
+        <app-title title="End Of Contract:" margin="0.5rem 1.1rem" fontSize="1.3rem"></app-title>
+        {{selectedPlayer.contractExp}}
+      </div>
+    </div>
+  </div>
+  <div class="games-info">
+    <app-title title="Game Ratings" margin="1.1rem"></app-title>
+    <div class="test"></div>
+  </div>
+  <div class="training-plan">
+    <app-title title="Training Plan" margin="1.1rem"></app-title>
+    <div class="test"></div>
+  </div>
+</div>

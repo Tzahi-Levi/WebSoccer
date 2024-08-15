@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Player } from '../../models/player.model';
 import { PlayerService } from '../../services/player.service';
+import { User } from '../../models/user.model';
+import { UserService } from '../../services/user.service';
+import { Squad } from '../../models/squad.model';
 
 @Component({
   selector: 'app-squad-list',
@@ -9,14 +12,21 @@ import { PlayerService } from '../../services/player.service';
   styleUrl: './squad-list.component.scss'
 })
 export class SquadListComponent {
+  user!:User;
+  squad!: Squad;
   players: Player[] = [];
 
-  constructor(private playerService: PlayerService){
-    let playersObservable: Observable<Player[]>;
-    playersObservable = this.playerService.getPlayers();
+  constructor(private playerService: PlayerService, private userService:UserService){
+    userService.userObservable.subscribe((newUser) => {
+      this.user = newUser;
+    })
+    let playersObservable: Observable<Squad[]>;
+    playersObservable = this.playerService.getPlayers(this.user.id);
 
     playersObservable.subscribe((serverPlayers) => {
-      this.players = serverPlayers
+      this.squad = serverPlayers[0];
+      this.players = this.squad.squad;
+      console.log(this.players);
     })
   }
 

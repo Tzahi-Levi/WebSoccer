@@ -23,11 +23,17 @@ router.get("/seed", expressAsyncHandler(
 router.post("/login", expressAsyncHandler(
   async (req, res) => {
     const {email, password} = req.body; //Destructuring assignment
-    const user = await UserModel.findOne({email, password});
+  
+    const user = await UserModel.findOne({email});
     if(user){
-      res.send(generateTokenResponse(user));
-    }
-    else {
+      const isMatch = bcrypt.compareSync(password, user.password);
+        if (isMatch) {
+          res.send(generateTokenResponse(user));
+            // Proceed with sign-in process
+        } else {
+          res.status(HTTP_BAD_REQUEST).send("Username or password is not valid!");
+        }
+    }else {
       res.status(HTTP_BAD_REQUEST).send("Username or password is not valid!");
     }
   }
@@ -35,7 +41,7 @@ router.post("/login", expressAsyncHandler(
 
 router.post('/register', expressAsyncHandler(
   async (req, res) => {
-    const {name, email, password, address} = req.body;
+    const {name, email, password} = req.body;
     const user = await UserModel.findOne({email});
     if(user){
       res.status(HTTP_BAD_REQUEST).send("User is already exist, please login!");

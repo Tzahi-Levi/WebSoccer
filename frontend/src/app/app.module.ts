@@ -23,6 +23,7 @@ import { RegisterPageComponent } from './shared/components/pages/register-page/r
 import { SquadPageComponent } from './shared/components/pages/squad-page/squad-page.component';
 import { LoadingComponent } from './shared/components/partials/loading/loading.component';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
+import { ManagementPlayerComponent } from './shared/components/management-player/management-player.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
     RegisterPageComponent,
     SquadPageComponent,
     LoadingComponent,
+    ManagementPlayerComponent,
   ],
   imports: [
     BrowserModule,

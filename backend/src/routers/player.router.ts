@@ -1,32 +1,33 @@
 import { Router } from "express";
 import { sample_players } from "../data";
 import expressAsyncHandler from "express-async-handler";
-import { PlayerModel } from "../models/player.model";
+import { SquadModel } from "../models/player.model";
 
 const router = Router();
 
 router.get("/seed", expressAsyncHandler(
   async (req, res) => {
-    const playerCount = await PlayerModel.countDocuments();
-    if(playerCount > 0) {
+    const squadCount = await SquadModel.countDocuments();
+    if(squadCount > 0) {
       res.send("Seed is already done!")
       return;
     }
-    await PlayerModel.create(sample_players);
+    await SquadModel.create({userId: '66b25a0dd75a10b04aec65f9', squad: sample_players});
     res.send("Seed is done!");
   }
 ))
 
-router.get("/",  expressAsyncHandler(
+router.get("/:userId",  expressAsyncHandler(
   async (req, res) => {
-    const squad = await PlayerModel.find();
+    const squad = await SquadModel.find({userId: req.params.userId});
     res.send(squad);
   }
 ))
-router.get("/:playerId", expressAsyncHandler(
+router.get("/:userId/:playerId", expressAsyncHandler(
   async (req, res) => {
-    const squad = await PlayerModel.findById(req.params.playerId);
-    res.send(squad);
+    const squad = await SquadModel.find({userId: req.params.userId});
+    const player = squad[0].squad.filter(player => player.id === req.params.playerId)
+    res.send(player);
   }
 )
   )

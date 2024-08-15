@@ -12,7 +12,7 @@ export class AvatarService {
 
   generateAvatar(player : Player | undefined): string {
     if(player){
-      const playerName = player.name.split(" ");
+      const playerName = player["name"].split(" ");
       return `https://robohash.org/${playerName![0]}+${playerName![1]}`;
     } else {
       return `https://robohash.org/bird`;

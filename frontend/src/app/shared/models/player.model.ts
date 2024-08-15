@@ -3,6 +3,8 @@ export interface Player {
   name: string;
   age: number;
   img: string;
+  salary: number;
+  contractExp: string;
   position: 'GK' | 'CB' | 'SW' | 'FB' | 'LB' | 'RB' | 'WB' | 'LWB' | 'RWB' | 'DM' | 'CDM' | 'CM' | 'AM' | 'CAM' | 'LAM' | 'RAM' | 'WM' | 'LM' | 'RM' | 'ST' | 'CF' | 'SS' | 'LW' | 'RW' ;
   overallRating: number;
   skills: {

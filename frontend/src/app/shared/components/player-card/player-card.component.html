@@ -1,4 +1,4 @@
-<div *ngIf="player" class="player-card">
+<div *ngIf="player" class="player-card" (click)="selectPlayer()">
   <div class="general">
     <div class="title">
       <div class="player-image" [ngClass]="{'injured': player.isInjured}">

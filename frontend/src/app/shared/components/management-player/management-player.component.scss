@@ -1,0 +1,62 @@
+@import '../../../../styles/variables';
+
+.container{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  box-shadow: 0 0 4px $transparent_black;
+  width: 50vb;
+  height: 90vh;
+  border-radius: 1.1rem;
+}
+
+.details{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  height: 100%;
+  width: 100%;
+  padding: 1.2rem;
+}
+
+.contract,
+.games-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid $transparent_black;
+  padding: 0 2rem;
+}
+
+.main-title{
+  color: $black;
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-top: 1.1rem;
+}
+
+.salary,
+.contract-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  color: $black;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.title{
+  color: $dark-gray;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.test{
+  height: 50px;
+}

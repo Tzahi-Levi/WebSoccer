@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import express from "express";
-import cors from "cors"; // TODO: Onlt for develpoment
+import cors from "cors"; // TODO: Only for develpoment
 import playerRouter from './routers/player.router';
 import userRouter from './routers/user.router';
 import {dbConnect} from './configs/database.config';
