@@ -5,6 +5,7 @@ import expressAsyncHandler from "express-async-handler";
 import bcrypt from 'bcryptjs';
 import { User, UserModel } from "../models/user.model";
 import { HTTP_BAD_REQUEST } from "../constants/http_status";
+import { SquadModel } from "../models/player.model";
 
 const router = Router();
 
@@ -56,6 +57,7 @@ router.post('/register', expressAsyncHandler(
       isAdmin: false
     }
     const dbUser = await UserModel.create(newUser);
+    await SquadModel.create({userId: dbUser.id, squad: []});
     res.send(generateTokenResponse(dbUser));
   }
 ))
